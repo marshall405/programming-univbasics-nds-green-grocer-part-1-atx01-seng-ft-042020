@@ -25,7 +25,7 @@ def consolidate_cart(cart)
   cart.each do |item|
    
       new_array.each do |arr_item|
-        if item[:item] == arr_item[:item]
+        if item[:item] == arr_item[:item] && new_array.length > 0 
           arr_item[:count] += 1 
         else # build new hash and add to new_array
           new_array << {
