@@ -28,13 +28,19 @@ def consolidate_cart(cart)
   }]
   
   cart.each do |item|
-    new_array_contains_item = new_array.find_index do |new_item|
+    new_array_contains_item_index = new_array.find_index do |new_item|
       new_item[:item] == item[:item]
     end
     
-    if new_array_contains_item 
-      new_array[]
+    if new_array_contains_item_index
+      new_array[new_array_contains_item_index][:count] += 1
     else 
+      new_array << {
+        :item => cart[0][:item],
+        :price => cart[0][:price],
+        :clearance => cart[0][:clearance],
+        :count => 1 
+      }
     end
     
     
