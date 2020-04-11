@@ -20,30 +20,17 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   # cart = array of hashes 
   # returns new array of hashes, but with each item containing a quantity 
-  new_array = []
+  new_array = [{
+    :item => cart[0][:item],
+    :price => cart[0][:price],
+    :clearance => cart[0][:clearance],
+    :count => 1 
+  }]
   
   cart.each do |item|
-    if new_array.length == 0 
-      new_array << {
-            :item => item[:item],
-            :price => item[:price],
-            :clearance => item[:clearance],
-            :count => 1
-          }
-    else 
-      new_array.each do |arr_item|
-        if item[:item] == arr_item[:item]
-          arr_item[:count] += 1 
-        else # build new hash and add to new_array
-          new_array << {
-            :item => item[:item],
-            :price => item[:price],
-            :clearance => item[:clearance],
-            :count => 1
-          }
-        end # end of if else 
-      end
-    end # end of new_array.each 
+    new_array_contains_item = new_array.contains 
+    
+    
   end # end of cart.each 
   new_array
 end
