@@ -23,7 +23,14 @@ def consolidate_cart(cart)
   new_array = []
   
   cart.each do |item|
-   
+    if new_array.length == 0 
+      new_array << {
+            :item => item[:item],
+            :price => item[:price],
+            :clearance => item[:clearance],
+            :count => 1
+          }
+    else 
       new_array.each do |arr_item|
         if item[:item] == arr_item[:item]
           arr_item[:count] += 1 
@@ -35,7 +42,7 @@ def consolidate_cart(cart)
             :count => 1
           }
         end # end of if else 
-      
+      end
     end # end of new_array.each 
   end # end of cart.each 
   new_array
