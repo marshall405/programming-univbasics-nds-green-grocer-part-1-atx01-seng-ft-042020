@@ -29,7 +29,12 @@ def consolidate_cart(cart)
   
   cart.each do |item|
     new_array_contains_item = new_array.filter do |new_item|
+      new_item[:item] == item[:item]
+    end
+    
+    if new_array_contains_item 
       
+    else 
     end
     
     
