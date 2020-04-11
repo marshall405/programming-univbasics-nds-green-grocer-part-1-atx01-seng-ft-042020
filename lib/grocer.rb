@@ -33,7 +33,7 @@ def consolidate_cart(cart)
     end
     
     if new_array_contains_item 
-      
+      new_array[]
     else 
     end
     
