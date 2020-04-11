@@ -28,7 +28,7 @@ def consolidate_cart(cart)
   }]
   
   cart.each do |item|
-    new_array_contains_item = new_array.filter 
+    new_array_contains_item = new_array.filter
     
     
   end # end of cart.each 
