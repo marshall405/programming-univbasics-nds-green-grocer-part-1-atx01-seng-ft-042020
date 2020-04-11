@@ -20,12 +20,7 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   # cart = array of hashes 
   # returns new array of hashes, but with each item containing a quantity 
-  new_array = [{
-    :item => cart[0][:item],
-    :price => cart[0][:price],
-    :clearance => cart[0][:clearance],
-    :count => 1 
-  }]
+  new_array = []
   
   cart.each do |item|
     new_array_contains_item_index = new_array.find_index do |new_item|
